@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { exploreContent } from '../../exploreContent';
+import { Header, Para } from '../../styles/Common.styled';
 import { mobile } from '../../styles/responsive';
 import RoomDescription from './components/RoomDescription';
 
@@ -10,12 +11,6 @@ const ExploreWrapper = styled.section`
   gap: 2rem;
   justify-content: center;
   width: 100%;
-`;
-const Header = styled.header`
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  gap: 1.5rem;
 `;
 
 const H1 = styled.h1`
@@ -27,19 +22,6 @@ const H1 = styled.h1`
   ${mobile({
     fontSize: '50px',
     lineHeight: '55px',
-  })}
-`;
-
-const Para = styled.p`
-  font-family: 'Ubuntu', sans-serif;
-  line-height: 14px;
-  font-size: 0.871rem;
-  text-align: left;
-  padding-right: 4rem;
-
-  ${mobile({
-    fontSize: '1rem',
-    lineHeight: '1rem',
   })}
 `;
 
@@ -71,7 +53,9 @@ const Explore = () => {
     <ExploreWrapper>
       <Header>
         <H1>Explore</H1>
-        <Para>From one-guest rooms to penthouses with pools and gardens </Para>
+        <Para fontSize=".875rem" fontWeight="700" lineHeight="1rem">
+          From one-guest rooms to penthouses with pools and gardens{' '}
+        </Para>
       </Header>
       <CardWrapper>
         {rooms?.map(elem => (

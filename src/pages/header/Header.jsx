@@ -7,7 +7,7 @@ import DownArrow from '../../assets/images/DownArrow.svg';
 import { laptop, mobile } from '../../styles/responsive';
 
 const Wrapper = styled.header`
-  width: clamp(290px, 95vw, 100%);
+  width: clamp(290px, 100vw, 100%);
   height: 700px;
   background: url('/main-header.svg'), rgba(21, 20, 20, 0.25);
   background-size: cover;

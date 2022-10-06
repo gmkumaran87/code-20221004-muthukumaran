@@ -15,12 +15,12 @@ const MainWrapper = styled.section`
   min-height: 700px;
   width: clamp(290px, 100vw, 1150px);
   overflow-x: hidden;
-
+  padding: 0.75rem;
   ${mobile({
     width: '100%',
 
     minWidth: '290px',
-    // padding: '10px',
+    padding: '2rem',
   })}
 `;
 const Layout = () => {

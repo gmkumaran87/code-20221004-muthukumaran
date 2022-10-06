@@ -7,6 +7,7 @@ import Theme from './styles/Theme';
 import Explore from './pages/explore/Explore';
 import AboutUs from './pages/aboutUs/AboutUs';
 import Navbar from './pages/header/components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   const search = useLocation();
@@ -15,12 +16,13 @@ function App() {
       <GlobalStyles />
       {search.pathname !== '/' && <Navbar />}
       <Routes>
+        <Route path="/" element={<Header />} />
         <Route element={<Layout />}>
-          <Route path="/" element={<Header />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/about-us" element={<AboutUs />} />
         </Route>
       </Routes>
+      <Footer />
     </Theme>
   );
 }

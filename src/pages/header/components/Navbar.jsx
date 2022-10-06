@@ -14,6 +14,9 @@ const NavbarContainer = styled.nav`
   width: 100%;
   padding: 0.75rem;
   color: ${({ color }) => color || '#fff'};
+  ${mobile({
+    padding: '1rem 2rem',
+  })}
 `;
 const NavWrapper = styled.div`
   display: flex;
@@ -22,8 +25,6 @@ const NavWrapper = styled.div`
     display: 'flex',
     flexFlow: 'row nowrap',
     alignItems: 'center',
-    // width: '100%',
-    padding: '10px',
   })};
 `;
 
@@ -110,18 +111,21 @@ const Navbar = () => {
     <NavbarContainer width="100%" color={!isHome ? '#000' : '#fff'}>
       <NavWrapper>
         <LeftSide>
-          <H2>Your Logo</H2>
+          <H2 color="#000" to="/">
+            Rentally
+          </H2>
         </LeftSide>
         <RightSide>
           <LinkWrapper color={!isHome ? '#000' : '#fff'}>
             <NavbarLink to="/explore">Explore</NavbarLink>
 
-            <NavbarLink to="/explore">About Us</NavbarLink>
+            <NavbarLink to="/about-us">About Us</NavbarLink>
 
             <NavbarLink to="/cities">
               Cities{' '}
               <span>
                 <img src={DownArrow} alt="Down arrow" />
+                {/* <DownArrow /> */}
               </span>
             </NavbarLink>
             <Button
@@ -130,6 +134,7 @@ const Navbar = () => {
               height="36px"
               color={'#fff'}
               border="2px solid #fff"
+              background="none"
               padding=".4rem 1rem"
               borderRadius="5px">
               Call
@@ -142,11 +147,15 @@ const Navbar = () => {
       </NavWrapper>
       {showSidebar && (
         <NavbarOuterContainer>
-          <NavbarLink to="/explore">Explore</NavbarLink>
+          <NavbarLink onClick={() => setShowSidebar(curr => !curr)} to="/explore">
+            Explore
+          </NavbarLink>
 
-          <NavbarLink to="/explore">About Us</NavbarLink>
+          <NavbarLink onClick={() => setShowSidebar(curr => !curr)} to="/about-us">
+            About Us
+          </NavbarLink>
 
-          <NavbarLink to="/cities">
+          <NavbarLink onClick={() => setShowSidebar(curr => !curr)} to="/cities">
             Cities{' '}
             <span>
               <img src={DownArrow} alt="Down arrow" />

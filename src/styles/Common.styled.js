@@ -15,14 +15,6 @@ export const Flex = styled.div `
   width: ${({ width }) => width || 'auto'};
   margin: ${({ margin }) => margin || '0'};
   padding: ${({ padding }) => padding || 'unset'};
-
-  ${mobile({
-    flexFlow: 'row nowrap',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    // width: '100%',
-    padding: '10px',
-  })};
 `;
 
 export const H1 = styled.h1 `
@@ -44,14 +36,14 @@ export const H2 = styled.h2 `
   font-size: 1.5rem;
 `;
 
-export const Para = styled.p `
+/*export const Para = styled.p `
   font-size: ${({ fontSize }) => fontSize || '1rem'};
   font-weight: ${({ fontWeight }) => fontWeight || '500'};
   line-height: ${({ lineHeight }) => lineHeight || 'unset'};
   text-align: ${({ textAlign }) => textAlign || 'unset'};
   font-family: ${({ fontFamily }) => fontFamily || 'inherit'};
   margin: ${({ margin }) => margin || '0'};
-`;
+`;*/
 
 export const InputEle = styled.input `
   color: ${({ color }) => color || 'unset'};
@@ -81,4 +73,49 @@ export const InputEle = styled.input `
   ${laptop({
     width: '170px',
   })}
+`;
+
+export const Header = styled.header `
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  gap: ${({ gap }) => gap || '1.5rem'};
+`;
+
+export const Para = styled.p `
+  font-family: 'Ubuntu', sans-serif;
+  line-height: ${({ lineHeight }) => lineHeight || 'unset'};
+  font-size: ${({ fontSize }) => fontSize || '1.25rem'};
+  text-align: ${({ textAlign }) => textAlign};
+  margin: ${({ margin }) => margin || 'unset'};
+  /* padding-right: 4rem; */
+
+  ${mobile({
+    fontSize: '1rem',
+    lineHeight: '1rem',
+  })}
+`;
+
+export const Card = styled.article `
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: ${({ width }) => width || '100%'};
+  gap: 1rem;
+  border-radius: 10px;
+  ${mobile({
+    width: '310px',
+    justifyContent: 'flex-start',
+  })}
+
+  ${laptop({
+    width: '400px',
+    justifyContent: 'center',
+  })}
+`;
+export const Image = styled.img `
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 `;

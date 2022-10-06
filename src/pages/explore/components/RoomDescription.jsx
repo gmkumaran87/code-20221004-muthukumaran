@@ -1,34 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { mobile, laptop } from '../../../styles/responsive';
-import { Para } from '../../../styles/Common.styled';
+import { mobile } from '../../../styles/responsive';
+import { Card, Image, Para } from '../../../styles/Common.styled';
 import Button, { ButtonStyle } from '../../../components/Button';
-
-import SecondImage from '../../../assets/images/third-image-1.svg';
-const Card = styled.section`
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 1rem;
-
-  ${mobile({
-    width: '310px',
-    justifyContent: 'flex-start',
-  })}
-
-  ${laptop({
-    width: '400px',
-    justifyContent: 'center',
-  })}
-`;
-
-const Image = styled.img`
-  width: 100%;
-  object-fit: cover;
-`;
 
 const DescWrapper = styled.div`
   background: linear-gradient(
@@ -75,7 +50,7 @@ const PriceButton = styled(ButtonStyle)`
 const RoomDescription = ({ room }) => {
   return (
     <Card>
-      <Image src={SecondImage} alt="Room picture" />
+      <Image src={room.image} alt="Room picture" />
       <DescWrapper>
         <DescInnerWrapper>
           <Para fontSize=".7rem">{room.description}</Para>
