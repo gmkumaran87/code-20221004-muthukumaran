@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const theme = {
+/*export const theme = {
     // Colors
     white: '#fff',
     black: '#000',
+    grey: '#6D6D6D',
 
     // Background
     buttonBgGradient: 'linear-gradient(90deg, #FF594C 0%, #FAC527 100%)',
@@ -12,7 +13,7 @@ export const theme = {
 
     // Border radius
     boxRadius: '10px',
-};
+};*/
 
 /* eslint-disable */
 const GlobalStyles = createGlobalStyle `
